@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-3xl font-bold underline">
       Hello E-Commerce.
+      <h1>Test</h1>
     </div>
   );
 }
