@@ -26,7 +26,7 @@ const HeaderComponent = () => {
     }
 
     return (
-        <header className="border-b">
+        <header className="border-b sticky top-0 bg-white">
             <div className="flex items-center justify-between px-4 py-3 md:px-8">
                 {/* Mobile Menu Icon */}
                 <div className="md:hidden">
