@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi';
 import Menu from './Menu';
 import { NavItem } from '@/types/navItems';
+import Search from '../common/Search';
 
 
 const navItems: NavItem[] = [
@@ -18,6 +19,12 @@ const navItems: NavItem[] = [
 const HeaderComponent = () => {
     const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isSearch, setIsSearch] = useState(false);
+
+    const toogleSearch = () => {
+        setIsSearch(!isSearch);
+    }
+
     return (
         <header className="border-b">
             <div className="flex items-center justify-between px-4 py-3 md:px-8">
@@ -44,8 +51,8 @@ const HeaderComponent = () => {
 
                 {/* Icons */}
                 <div className="flex items-center space-x-4">
-                    <FiSearch size={20} className="cursor-pointer" />
-                    <FiShoppingCart size={20} className="cursor-pointer" />
+                    {!isSearch ? <FiSearch size={20} className="cursor-pointer" onClick={toogleSearch} /> : <Search toogleSearch={toogleSearch} />}
+                    <FiShoppingCart size={20} className="cursor-pointer" onClick={toogleSearch} />
                     <FiUser size={20} className="cursor-pointer" />
                 </div>
             </div>
