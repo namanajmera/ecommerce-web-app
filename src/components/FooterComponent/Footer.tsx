@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="max-w-screen-xl mx-auto px-4 md:px-16 py-10 grid grid-cols-2 md:grid-cols-6 gap-8">
                 {/* Logo & Description */}
                 <div className="col-span-2 space-y-4">
-                    <h3 className="text-xl font-bold">SHOP.CO</h3>
+                    <h3 className="text-xl font-bold font-secondry">SHOP.CO</h3>
                     <p className="text-gray-600">
                         We have clothes that suits your style and which you’re proud to
                         wear. From women to men.
@@ -65,7 +65,7 @@ const Footer = () => {
                 {/* Link Columns */}
                 {footerData.map((section) => (
                     <div key={section.title}>
-                        <h4 className="font-semibold mb-3">{section.title}</h4>
+                        <h4 className="mb-3 font-medium text-base leading-[112%] tracking-[0.19em] uppercase text-black">{section.title}</h4>
                         <ul className="space-y-2 text-sm text-gray-600">
                             {section.links.map((link) => (
                                 <li key={link} className="hover:text-black cursor-pointer">{link}</li>
