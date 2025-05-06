@@ -1,3 +1,4 @@
+import Button from "../common/Button";
 
 
 const Banner = () => {
@@ -12,10 +13,7 @@ const Banner = () => {
                         Browse through our diverse range of meticulously crafted garments,
                         designed to bring out your individuality and cater to your sense of style.
                     </p>
-                    <button className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition">
-                        Shop Now
-                    </button>
-
+                    <Button text="Show Now" className="text-white" />
                     <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-md">
                         <div>
                             <p className="text-2xl font-bold">200+</p>

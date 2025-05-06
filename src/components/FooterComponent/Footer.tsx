@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import Button from "../common/Button";
 
 const footerData = [
     {
@@ -39,9 +40,7 @@ const Footer = () => {
                                 className="w-full outline-none text-black bg-transparent placeholder-gray-400"
                             />
                         </div>
-                        <button className="bg-white text-black px-6 py-2 rounded-full w-80 font-semibold">
-                            Subscribe to Newsletter
-                        </button>
+                        <Button text="Subscribe to Newsletter" className="bg-white text-black w-80 font-semibold" />
                     </div>
                 </div>
             </div>
