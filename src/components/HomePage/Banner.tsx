@@ -3,7 +3,7 @@ import Button from "../common/Button";
 
 const Banner = () => {
     return (
-        <section className="w-full bg-[#f2f0f1] md:bg-[url('/hero-bg.png')] md:bg-no-repeat md:bg-contain md:bg-right mb-10">
+        <section className="w-full bg-[#f2f0f1] md:bg-[url('/hero-bg.png')] md:bg-no-repeat md:bg-cover md:bg-right">
             <div className="relative container mx-auto px-6 py-20 flex flex-col lg:flex-row items-center bg-transparent">
                 <div className="w-full lg:w-1/2">
                     <h1 className="text-5xl font-extrabold leading-tight text-black mb-6 font-secondry">
