@@ -1,13 +1,9 @@
-import { Footer, HeaderComponent } from "@/components";
+import { HomePage } from "@/components";
 
 export default function Home() {
   return (
     <>
-      <HeaderComponent />
-      <div className="min-h-screen">
-        SHOP.CO
-      </div>
-      <Footer />
+      <HomePage />
     </>
   );
 }

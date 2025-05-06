@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer, HeaderComponent } from "@/components";
 
 export const metadata: Metadata = {
   title: "E-Commerce App",
@@ -14,7 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-primary">
-        {children}
+        <HeaderComponent />
+        <div className="min-h-screen">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
