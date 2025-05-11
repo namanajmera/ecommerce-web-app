@@ -9,14 +9,15 @@ type Props = {
 
 const CardContainer = ({ items, title }: Props) => {
     return (
-        <div className="flex justify-center items-center flex-col pb-10 mb-10 space-y-10">
-            <h1 className="font-secondry font-bold text-5xl">{title}</h1>
-            <div className="flex justify-center items-center flex-wrap space-x-10">
+        <div className="flex justify-center items-center flex-col pb-10 mb-5 space-y-10">
+            <h1 className="font-secondry font-bold text-5xl text-center">{title}</h1>
+            <div className="flex flex-col md:flex-row justify-center items-center flex-wrap space-y-5 md:space-x-10 md:space-y-0">
                 {items && items.map((ele, index) => (
                     <ItemCard key={index} product={ele} />
                 ))}
             </div>
             <Button text="View All" className="bg-white text-black border border-black w-60" />
+            <hr className="border border-black/10 w-[77.5rem] h-0" />
         </div>
     )
 }
