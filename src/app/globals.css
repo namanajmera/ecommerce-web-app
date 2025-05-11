@@ -34,4 +34,7 @@
 @theme {
   --font-primary: "Satoshi", sans-serif;
   --font-secondry: "IntegralCF", sans-serif;
+
+  /* Card */
+  --color-card-bg: #F0EEED
 }

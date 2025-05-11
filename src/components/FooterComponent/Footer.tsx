@@ -24,7 +24,7 @@ const footerData = [
 
 const Footer = () => {
     return (
-        <footer className="bg-[#f0f0f0] text-sm text-gray-700 w-full relative">
+        <footer className="bg-[#f0f0f0] text-sm text-gray-700 w-full relative pt-7">
             {/* Newsletter Banner */}
             <div className="bg-black text-white px-4 md:px-16 py-8 rounded-2xl mx-auto w-full 2xl:w-7xl xl:w-5xl -mt-20">
                 <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">

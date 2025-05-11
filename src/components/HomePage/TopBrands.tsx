@@ -26,7 +26,7 @@ const TopBrands = () => {
         }
     ]
     return (
-        <div className="bg-black w-full h-auto p-10 flex flex-col xl:flex-row justify-center xl:justify-evenly items-center space-y-10 xl:space-y-0">
+        <div className="bg-black w-full h-auto p-10 mb-10 flex flex-col xl:flex-row justify-center xl:justify-evenly items-center space-y-10 xl:space-y-0">
             {
                 topBrandsNames && topBrandsNames.map((brand: BrandNames) => (
                     <Image src={brand.imagePath} alt={brand.name} key={brand.name} width={150} height={40} />
