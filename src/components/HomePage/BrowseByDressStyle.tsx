@@ -28,7 +28,7 @@ const BrowseByDressStyle = () => {
         <div className="flex justify-center items-center flex-row xl:flex-col space-y-10 mb-20 xl:w-6xl mx-auto">
             <div className="bg-[#f0f0f0] space-y-10 p-10 rounded-2xl">
                 <h1 className="font-secondry font-bold text-5xl text-center">{"Browse by Dress Style"}</h1>
-                <div className="flex flex-col xl:flex-row xl:flex-wrap space-x-4 justify-center items-center space-y-4">
+                <div className="flex flex-col xl:flex-row xl:flex-wrap xl:space-x-4 justify-center items-center space-y-4 xl:space-y-0 gap-3">
                     {dressStyles.map((style, index) => (
                         <DressStyleCard key={index} title={style.title} imageUrl={style.imageUrl} customClass={style.classNames} />
                     ))}
