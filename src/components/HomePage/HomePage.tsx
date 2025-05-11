@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import BrowseByDressStyle from "./BrowseByDressStyle";
 import NewArrivals from "./NewArrivals";
 import TopBrands from "./TopBrands";
 import TopSelling from "./TopSelling";
@@ -11,6 +12,7 @@ const HomePage = () => {
       <TopBrands />
       <NewArrivals />
       <TopSelling />
+      <BrowseByDressStyle />
     </div>
   )
 }
