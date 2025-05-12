@@ -12,3 +12,9 @@ export type Product = {
     rating: number;
     image: string;
 }
+
+export type Review = {
+    name: string;
+    message: string;
+    rating: number;
+};

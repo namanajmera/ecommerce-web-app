@@ -20,7 +20,7 @@ const StarRating = ({ rating }: Props) => {
     return (
         <div className="flex items-center space-x-1">
             {stars}
-            <span className="ml-1 text-sm text-gray-500">{rating}/5</span>
+            {/* <span className="ml-1 text-sm text-gray-500">{rating}/5</span> */}
         </div>
     );
 };
