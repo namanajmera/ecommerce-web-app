@@ -32,7 +32,7 @@ const CustomersReviewSection = () => {
     return (
         <div className="flex justify-center items-center flex-col pb-10 mb-10 space-y-10">
             <h1 className="font-secondry font-bold text-5xl text-center">{"Our Happy Customers"}</h1>
-            <div className="flex justify-center items-center space-x-5">
+            <div className="flex justify-center items-center space-y-5 flex-col xl:flex-row p-5 xl:space-x-5 xl:space-y-0">
             {testimonials.map((t, index) => (
                 <TestimonialCard key={index} {...t} />
             ))}
