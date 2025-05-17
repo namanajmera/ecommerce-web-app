@@ -9,5 +9,6 @@ import Search from "./Search";
 import SizesContainer from "./SizesContainer";
 import StarRating from "./StarRating";
 import TestimonialCard from "./TestimonialCard";
+import PriceRangeSlider from "./PriceRangeSlider";
 
-export { AddToCartContainer, BaseButton, Button, CardContainer, DressStyleCard, ItemCard, PriceContainer, Search, SizesContainer, StarRating, TestimonialCard }
+export { AddToCartContainer, BaseButton, Button, CardContainer, DressStyleCard, ItemCard, PriceContainer, Search, SizesContainer, StarRating, TestimonialCard, PriceRangeSlider }
