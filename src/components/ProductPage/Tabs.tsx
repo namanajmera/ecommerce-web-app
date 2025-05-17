@@ -13,9 +13,9 @@ export default function Tabs() {
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`relative px-4 py-2 text-sm md:text-base transition-colors cursor-pointer ${activeTab === tab
+                        className={`relative px-4 py-2 text-sm md:text-base transition-colors ${activeTab === tab
                                 ? 'text-black font-semibold'
-                                : 'text-gray-400'
+                                : 'text-gray-400 cursor-pointer'
                             }`}
                     >
                         {tab}
