@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import Button from "../common/Button";
+import { Button } from "../common";
 
 const footerData = [
     {

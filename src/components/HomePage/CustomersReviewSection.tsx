@@ -1,5 +1,5 @@
 import { Review } from "@/types/items";
-import TestimonialCard from "../common/TestimonialCard";
+import { TestimonialCard } from "../common";
 
 const testimonials: Review[] = [
     {

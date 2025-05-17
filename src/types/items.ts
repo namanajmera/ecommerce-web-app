@@ -18,3 +18,14 @@ export type Review = {
     message: string;
     rating: number;
 };
+
+export type PriceContainerType = {
+    price: number;
+    originalPrice: number | null;
+    discount: string | null;
+}
+export type Sizes = {
+    id: number;
+    label: string;
+    value: string,
+}

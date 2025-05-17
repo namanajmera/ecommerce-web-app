@@ -1,5 +1,5 @@
 import { Product } from "@/types/items";
-import CardContainer from "../common/CardContainer";
+import { CardContainer } from "../common";
 
 const NewArrivals = () => {
     const newArrivals: Product[] = [

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi';
 import Menu from './Menu';
 import { NavItem } from '@/types/navItems';
-import Search from '../common/Search';
+import { Search } from '../common';
 
 
 const navItems: NavItem[] = [

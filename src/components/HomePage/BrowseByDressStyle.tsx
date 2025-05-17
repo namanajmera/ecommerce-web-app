@@ -1,4 +1,4 @@
-import DressStyleCard from "../common/DressStyleCard";
+import { DressStyleCard } from "../common";
 
 
 const BrowseByDressStyle = () => {

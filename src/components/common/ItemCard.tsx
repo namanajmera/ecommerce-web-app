@@ -1,6 +1,7 @@
 import { Product } from "@/types/items";
 import Image from "next/image";
 import StarRating from "./StarRating";
+import PriceContainer from "./PriceContainer";
 
 type Props = {
     product: Product,
@@ -23,6 +24,7 @@ const ItemCard = ({ product }: Props) => {
                     <StarRating rating={product.rating} />
                     <span className="font-medium text-black">{product.rating}</span>
                 </div>
+                <PriceContainer discount={product.discount} originalPrice={product.originalPrice} price={product.price} />
                 <div className="flex items-center space-x-3">
                     <span className="text-xl font-semibold text-black">${product.price}</span>
                     {product.originalPrice && (
