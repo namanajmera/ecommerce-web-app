@@ -11,7 +11,7 @@ const SizesContainer = ({ sizes, setSelectedSize, selectedSize }: Props) => {
     return (
         <div>
             <p className="text-sm font-medium mb-1">Choose Sizes</p>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
                 {sizes.map((size) => (
                     <button
                         key={size.id}

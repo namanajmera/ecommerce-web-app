@@ -1,10 +1,14 @@
-'use client';
-import { useState } from 'react';
+import ProductDetails from './ProductDetails';
+import RatingReview from './RatingReview';
+import Faq from './Faq';
 
-const tabs = ['Product Details', 'Rating & Reviews', 'FAQs'];
+type props = {
+    tabs: string[],
+    activeTab: string,
+    setActiveTab: (val: string) => void;
+}
 
-export default function Tabs() {
-    const [activeTab, setActiveTab] = useState('Rating & Reviews');
+export default function Tabs({ tabs, activeTab, setActiveTab }: props) {
 
     return (
         <div className="w-full mx-auto">
@@ -14,8 +18,8 @@ export default function Tabs() {
                         key={tab}
                         onClick={() => setActiveTab(tab)}
                         className={`relative px-4 py-2 text-sm md:text-base transition-colors ${activeTab === tab
-                                ? 'text-black font-semibold'
-                                : 'text-gray-400 cursor-pointer'
+                            ? 'text-black font-semibold'
+                            : 'text-gray-400 cursor-pointer'
                             }`}
                     >
                         {tab}
@@ -26,11 +30,10 @@ export default function Tabs() {
                 ))}
             </div>
 
-            {/* Tab Content */}
             <div className="mt-6 text-gray-600">
-                {activeTab === 'Product Details' && <div>Details about the product...</div>}
-                {activeTab === 'Rating & Reviews' && <div>⭐️ User reviews and ratings go here...</div>}
-                {activeTab === 'FAQs' && <div>Frequently Asked Questions...</div>}
+                {activeTab === 'Product Details' && <ProductDetails />}
+                {activeTab === 'Rating & Reviews' && <RatingReview />}
+                {activeTab === 'FAQs' && <Faq />}
             </div>
         </div>
     );
