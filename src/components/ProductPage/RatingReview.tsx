@@ -1,5 +1,6 @@
 import { Review } from "@/types/items";
-import { TestimonialCard } from "../common"
+import { Button, TestimonialCard } from "../common"
+import { FaSlidersH } from "react-icons/fa";
 
 const testimonials: Review[] = [
     {
@@ -54,12 +55,34 @@ const testimonials: Review[] = [
 const RatingReview = () => {
     return (
         <div className="p-6 bg-white rounded-md shadow space-y-4 flex flex-col">
-            <h2 className="text-lg font-semibold mb-4">Customer Reviews</h2>
+            <div className="flex justify-between items-center flex-wrap gap-4">
+
+                <h2 className="text-lg font-semibold">
+                    All Reviews <span className="text-gray-400 text-sm">({testimonials.length})</span>
+                </h2>
+
+                <div className="flex items-center gap-2">
+                    <button className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full cursor-pointer">
+                        <FaSlidersH className="text-sm" />
+                    </button>
+
+                    <div className="relative">
+                        <select className="appearance-none bg-gray-100 text-sm font-medium py-2 px-4 rounded-full focus:outline-none pr-6 cursor-pointer">
+                            <option selected>Latest</option>
+                            <option>Oldest</option>
+                            <option>Top Rated</option>
+                        </select>
+                    </div>
+                    <Button text="Write a Review" className="text-white text-sm font-medium" />
+                </div>
+
+            </div>
             <div className="flex flex-wrap gap-2">
                 {testimonials.map((t, index) => (
                     <TestimonialCard key={index} {...t} />
                 ))}
             </div>
+            <Button text="Load More Review" className="bg-white border w-2xs" />
         </div>
     )
 }
