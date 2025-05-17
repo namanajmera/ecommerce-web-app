@@ -67,7 +67,7 @@ export default function ProductPage() {
                     <p className="text-gray-600">
                         This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.
                     </p>
-
+                    <hr className="opacity-10" />
                     <div>
                         <p className="text-sm font-medium mb-1">Select Colors</p>
                         <div className="flex gap-2">
@@ -81,8 +81,10 @@ export default function ProductPage() {
                             ))}
                         </div>
                     </div>
+                    <hr className="opacity-10" />
 
                     <SizesContainer sizes={sizes} selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
+                    <hr className="opacity-10" />
                     <AddToCartContainer quantity={quantity} setQuantity={setQuantity} />
                 </div>
 
