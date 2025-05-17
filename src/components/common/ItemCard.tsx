@@ -2,6 +2,7 @@ import { Product } from "@/types/items";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import PriceContainer from "./PriceContainer";
+import Link from "next/link";
 
 type Props = {
     product: Product,
@@ -19,25 +20,12 @@ const ItemCard = ({ product }: Props) => {
                 />
             </div>
             <div className="flex flex-col p-4 space-y-2">
-                <h6 className="font-semibold text-base leading-snug">{product.name}</h6>
+                <h6 className="font-semibold text-base leading-snug"><Link href={'/product'} className="hover:underline">{product.name}</Link></h6>
                 <div className="flex items-center space-x-1 text-sm text-gray-600">
                     <StarRating rating={product.rating} />
                     <span className="font-medium text-black">{product.rating}</span>
                 </div>
                 <PriceContainer discount={product.discount} originalPrice={product.originalPrice} price={product.price} />
-                <div className="flex items-center space-x-3">
-                    <span className="text-xl font-semibold text-black">${product.price}</span>
-                    {product.originalPrice && (
-                        <span className="text-xl font-semibold text-gray-400 line-through">
-                            ${product.originalPrice}
-                        </span>
-                    )}
-                    {product.discount && (
-                        <span className="text-sm font-medium bg-red-100 text-red-500 rounded-full px-3 py-0.5">
-                            -{product.discount}
-                        </span>
-                    )}
-                </div>
             </div>
         </div>
     );
