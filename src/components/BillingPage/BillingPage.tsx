@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "../common";
 import Image from "next/image";
+import Link from "next/link";
 
 const initialCartItems = [
     {
@@ -117,7 +118,9 @@ const BillingPage = () => {
                             <span>Cash on delivery</span>
                         </label>
                     </div>
-                    <Button text="Place Order" className="text-white" />
+                    <Link href={'/thankyou'}>
+                        <Button text="Place Order" className="text-white" />
+                    </Link>
                 </div>
             </div>
         </div>
