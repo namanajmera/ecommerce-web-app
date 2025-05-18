@@ -6,6 +6,7 @@ import { Button, QuantityContainer } from "../common";
 import Image from "next/image";
 import { PiTagLight } from "react-icons/pi";
 import EmptyCart from "./EmptyCart";
+import Link from "next/link";
 
 const initialCartItems = [
     {
@@ -67,7 +68,7 @@ const CartPage = () => {
         <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Cart Items */}
             <div className="md:col-span-2 space-y-6">
-                <h1 className="text-2xl font-bold">Your Cart</h1>
+                <h1 className="text-2xl font-bold font-secondry">Your Cart</h1>
                 {cartItems && cartItems.length > 0 ? <div className="flex flex-col space-y-3 border border-gray-300 rounded-lg px-4">
                     {cartItems.map((item, index) => (
                         <>
@@ -132,7 +133,9 @@ const CartPage = () => {
                     </label>
                     <Button text="Apply" className="text-white" />
                 </div>
-                <Button text="Go to Checkout →" className="text-white w-full" />
+                <Link href={'/billing'}>
+                    <Button text="Go to Checkout →" className="text-white w-full" />
+                </Link>
             </div>
         </div>
     )
