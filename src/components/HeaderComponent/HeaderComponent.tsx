@@ -52,7 +52,9 @@ const HeaderComponent = () => {
                 {/* Icons */}
                 <div className="flex items-center space-x-4">
                     {!isSearch ? <FiSearch size={20} className="cursor-pointer" onClick={toogleSearch} /> : <Search toogleSearch={toogleSearch} />}
-                    <FiShoppingCart size={20} className="cursor-pointer" onClick={toogleSearch} />
+                    <Link href={'/cart'} >
+                        <FiShoppingCart size={20} className="cursor-pointer" />
+                    </Link>
                     <FiUser size={20} className="cursor-pointer" />
                 </div>
             </div>

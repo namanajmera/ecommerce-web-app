@@ -37,6 +37,10 @@ export default function ProductPage() {
         value: "xxl"
     }];
 
+    const handleQuantity = (val: number) => {
+        setQuantity((prev) => Math.max(1, prev + val))
+    }
+
     return (
         <>
             <div className="flex flex-col md:flex-row gap-8 p-8 max-w-6xl mx-auto">
@@ -85,7 +89,7 @@ export default function ProductPage() {
 
                     <SizesContainer sizes={sizes} selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
                     <hr className="opacity-10" />
-                    <AddToCartContainer quantity={quantity} setQuantity={setQuantity} />
+                    <AddToCartContainer quantity={quantity} setQuantity={handleQuantity} />
                 </div>
 
             </div>

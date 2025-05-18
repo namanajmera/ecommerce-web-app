@@ -10,5 +10,6 @@ import SizesContainer from "./SizesContainer";
 import StarRating from "./StarRating";
 import TestimonialCard from "./TestimonialCard";
 import PriceRangeSlider from "./PriceRangeSlider";
+import QuantityContainer from "./QuantityContainer";
 
-export { AddToCartContainer, BaseButton, Button, CardContainer, DressStyleCard, ItemCard, PriceContainer, Search, SizesContainer, StarRating, TestimonialCard, PriceRangeSlider }
+export { AddToCartContainer, BaseButton, Button, CardContainer, DressStyleCard, ItemCard, PriceContainer, Search, SizesContainer, StarRating, TestimonialCard, PriceRangeSlider, QuantityContainer }
