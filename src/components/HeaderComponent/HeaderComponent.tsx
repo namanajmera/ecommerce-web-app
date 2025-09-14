@@ -7,13 +7,14 @@ import { FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi';
 import Menu from './Menu';
 import { NavItem } from '@/types/navItems';
 import { Search } from '../common';
+import { useMemo, useCallback } from 'react';
 
 
-const navItems: NavItem[] = [
+const navItemsData: NavItem[] = [
     { name: 'Shop', href: '/shop' },
     { name: 'On Sale', href: '/sale' },
     { name: 'New Arrivals', href: '/new' },
-    { name: 'Brands', href: '/brands' }
+    { name: 'Brands', href: '/brands' },
 ];
 
 const HeaderComponent = () => {
@@ -21,9 +22,15 @@ const HeaderComponent = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isSearch, setIsSearch] = useState(false);
 
-    const toogleSearch = () => {
-        setIsSearch(!isSearch);
-    }
+    // Memoize navItems to avoid unnecessary re-renders
+    const navItems = useMemo(() => navItemsData, []);
+
+    // useCallback for handlers
+    const toogleSearch = useCallback(() => {
+        setIsSearch((prev) => !prev);
+    }, []);
+
+    const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
 
     return (
         <header className="border-b sticky top-0 bg-white z-10">
@@ -51,8 +58,12 @@ const HeaderComponent = () => {
 
                 {/* Icons */}
                 <div className="flex items-center space-x-4">
-                    {!isSearch ? <FiSearch size={20} className="cursor-pointer" onClick={toogleSearch} /> : <Search toogleSearch={toogleSearch} />}
-                    <Link href={'/cart'} >
+                    {!isSearch ? (
+                        <FiSearch size={20} className="cursor-pointer" onClick={toogleSearch} />
+                    ) : (
+                        <Search toogleSearch={toogleSearch} />
+                    )}
+                    <Link href={'/cart'}>
                         <FiShoppingCart size={20} className="cursor-pointer" />
                     </Link>
                     <FiUser size={20} className="cursor-pointer" />
@@ -67,7 +78,7 @@ const HeaderComponent = () => {
                                 key={item.href}
                                 href={item.href}
                                 className={`text-sm ${pathname === item.href ? 'font-semibold' : 'text-gray-600 hover:text-black'}`}
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={closeMobileMenu}
                             >
                                 {item.name}
                             </Link>
