@@ -4,6 +4,8 @@ import { Button } from "../common";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useMemo } from "react";
+
 const initialCartItems = [
     {
         id: 1,
@@ -12,7 +14,7 @@ const initialCartItems = [
         color: "White",
         price: 145,
         quantity: 1,
-        image: "/items/shirt-3.png"
+        image: "/items/shirt-3.png",
     },
     {
         id: 2,
@@ -21,7 +23,7 @@ const initialCartItems = [
         color: "Red",
         price: 180,
         quantity: 1,
-        image: "/items/shirt-2.png"
+        image: "/items/shirt-2.png",
     },
     {
         id: 3,
@@ -30,49 +32,52 @@ const initialCartItems = [
         color: "Blue",
         price: 240,
         quantity: 1,
-        image: "/items/jense-1.png"
+        image: "/items/jense-1.png",
     },
 ];
 const BillingPage = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        companyName: '',
-        address: '',
-        apartment: '',
-        city: '',
-        phone: '',
-        email: '',
+        firstName: "",
+        companyName: "",
+        address: "",
+        apartment: "",
+        city: "",
+        phone: "",
+        email: "",
         saveInfo: true,
     });
+    const [paymentMethod, setPaymentMethod] = useState("cod");
 
-    const [paymentMethod, setPaymentMethod] = useState('cod');
+    // Memoize cart items (static in this example)
+    const cartItems = useMemo(() => initialCartItems, []);
+
+    // Memoize subtotal calculation
+    const subtotal = useMemo(
+        () => cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0),
+        [cartItems]
+    );
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         setFormData((prev) => ({
             ...prev,
-            [name]: type === 'checkbox' ? checked : value,
+            [name]: type === "checkbox" ? checked : value,
         }));
     };
-    const [cartItems] = useState(initialCartItems);
 
-    const subtotal = cartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-    );
     return (
         <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left: Billing Form */}
             <div>
                 <h2 className="text-2xl font-semibold mb-6 font-secondry">Billing Details</h2>
                 <div className="space-y-4">
-                    <input name="firstName" placeholder="First Name*" value={formData.firstName} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="phone" placeholder="Phone Number*" value={formData.phone} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="email" placeholder="Email Address*" value={formData.email} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="address" placeholder="Street Address*" value={formData.address} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="apartment" placeholder="Apartment, floor, etc. (optional)" value={formData.apartment} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
-                    <input name="city" placeholder="Town/City*" value={formData.city} onChange={handleChange} className="w-full border rounded-md px-4 py-2" />
+                    <input name="firstName" placeholder="First Name*" value={formData.firstName} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="given-name" />
+                    <input name="phone" placeholder="Phone Number*" value={formData.phone} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="tel" />
+                    <input name="email" placeholder="Email Address*" value={formData.email} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="email" />
+                    <input name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="organization" />
+                    <input name="address" placeholder="Street Address*" value={formData.address} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="street-address" />
+                    <input name="apartment" placeholder="Apartment, floor, etc. (optional)" value={formData.apartment} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="address-line2" />
+                    <input name="city" placeholder="Town/City*" value={formData.city} onChange={handleChange} className="w-full border rounded-md px-4 py-2" autoComplete="address-level2" />
 
                     <label className="flex items-center space-x-2 mt-4">
                         <input type="checkbox" name="saveInfo" checked={formData.saveInfo} onChange={handleChange} className="accent-red-500" />
